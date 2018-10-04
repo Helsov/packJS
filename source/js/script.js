@@ -1,3 +1,8 @@
+import newCar from './car.js';
+
+var vol = new newCar(2018, 4, 'red');
+vol.getChar();
+
 class Car {
     constructor(color, year, manufacturer, engine) {
         this.color = color;
@@ -33,8 +38,8 @@ class Engine {
     }
 }
 
-engine = new Engine();
+let engine = new Engine();
 
-myCar = new Car('white', 2015, 'Mersedes', engine);
+let myCar = new Car('white', 2015, 'Mersedes', engine);
 myCar.setColor('BLack');
 myCar.startEngine();
