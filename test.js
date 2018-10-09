@@ -26,7 +26,7 @@ describe("Блок теста", ()=>{
     assert.equal(operations.validateNumbers('sammy', 'sammy'), false);
   });
 
-  it('успех пр использовании двух чисел', ()=>{
+  it('успех при использовании двух чисел', ()=>{
     assert.equal(operations.validateNumbers(5, 5), true);
   });
 })

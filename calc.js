@@ -16,4 +16,38 @@ Calc.js
 выбрать, что с ними сделать.
 `);
 
-rl.close();
+rl.question('Введите первое число ', (x)=>{
+    rl.question('Введите второе число ', (y)=>{
+        rl.question(`
+        Выберите одну из следующих операций:
+        [1] Сложение (+)
+        [2] Вычитание (-)
+        [3] Умножение (*)
+        [4] Деление (/)
+        Ваш выбор: `, (choice)=>{
+            if (!operations.validateNumbers(x, y)) {
+                console.log('Можно вводить только числа! Пожалуйста, перезапустите программу.');
+              } else {
+                switch (choice) {
+                  case '1':
+                    console.log(`Сумма ${x} и ${y} равна ${operations.add(x, y)}.`);
+                    break;
+                  case '2':
+                    console.log(`Разность ${x} и ${y} равна ${operations.subtract(x, y)}.`);
+                    break;
+                  case '3':
+                    console.log(`Произведение ${x} и ${y} равно ${operations.multiply(x, y)}.`);
+                    break;
+                  case '4':
+                    console.log(`Частное ${x} и ${y} равно ${operations.divide(x, y)}.`);
+                    break;
+                  default:
+                    console.log('Пожалуйста, перезапустите программу и выберите число от 1 до 4.');
+                    break;
+                }
+              }
+
+            rl.close();
+        })
+    })
+})
